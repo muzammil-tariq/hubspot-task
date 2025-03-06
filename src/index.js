@@ -16,7 +16,7 @@ const logger = require('./logger');
     const { contactsWithoutDeals, contactsWithDeals } = await checkDeals(
       contacts
     );
-    const [updatedCount, createdCount] = Promise.all([
+    const [updatedCount, createdCount] = await Promise.all([
       updateDeals(contactsWithDeals),
       createNewDeals(contactsWithoutDeals),
     ]);
