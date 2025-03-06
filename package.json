@@ -9,5 +9,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {}
+  "dependencies": {
+    "@hubspot/api-client": "^12.0.1",
+    "@sendgrid/mail": "^8.1.4",
+    "dotenv": "^16.4.7",
+    "winston": "^3.17.0"
+  }
 }
