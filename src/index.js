@@ -16,8 +16,10 @@ const logger = require('./logger');
     const { contactsWithoutDeals, contactsWithDeals } = await checkDeals(
       contacts
     );
-    const updatedCount = await updateDeals(contactsWithDeals);
-    const createdCount = await createNewDeals(contactsWithoutDeals);
+    const [updatedCount, createdCount] = Promise.all([
+      updateDeals(contactsWithDeals),
+      createNewDeals(contactsWithoutDeals),
+    ]);
     await sendNotification({
       total: contacts.length,
       updatedCount,
